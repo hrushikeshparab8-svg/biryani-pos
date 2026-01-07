@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The House of Biryani’s POS</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="print.css" media="print">
+
+</head>
+<body>
+
+<div class="sidebar glass">
+  <h3>The House of Biryani’s</h3>
+  <button onclick="nav('home')">🏠 Home</button>
+  <button onclick="nav('bills'); loadBills()">🧾 Bills</button>
+  <button onclick="nav('sales'); loadSales()">📊 Sales</button>
+  <button onclick="openSettings()">⚙️ Settings</button>
+</div>
+
+<div class="content">
+
+<!-- HOME -->
+<section id="home" class="page">
+<h2>New Bill</h2>
+
+<div class="orderType">
+<button onclick="setType('Dine In')">🍽 Dine In</button>
+<button onclick="setType('Swiggy')">🟠 Swiggy</button>
+<button onclick="setType('Zomato')">🔴 Zomato</button>
+<button onclick="setType('Take Away')">📦 Take Away</button>
+</div>
+
+<div id="menu"></div>
+
+<h3>Total: ₹<span id="total">0</span></h3>
+<button class="primary" onclick="saveBill()">Create Bill</button>
+</section>
+
+<!-- BILLS -->
+<section id="bills" class="page hidden">
+<h2>Bills</h2>
+<div id="billList"></div>
+
+<div id="billView" class="glass hidden">
+  <div id="billContent"></div>
+  <button onclick="printBill()">🖨 Reprint</button>
+  <button onclick="closeBill()">Close</button>
+</div>
+</section>
+
+<!-- SALES -->
+<section id="sales" class="page hidden">
+<h2>Sales Analytics</h2>
+<div id="salesData" class="glass"></div>
+</section>
+
+<!-- SETTINGS -->
+<section id="settings" class="page hidden">
+<h2>Settings</h2>
+
+<h3>Restaurant</h3>
+<input id="resName" placeholder="Restaurant Name">
+<input id="resAddr" placeholder="Address">
+
+<h3>GST</h3>
+<label><input type="checkbox" id="gstToggle"> Enable GST</label>
+<input id="gstRate" placeholder="GST %">
+<input id="gstNo" placeholder="GST No">
+
+<h3>Menu</h3>
+<input id="itemName" placeholder="Item Name">
+<input id="itemPrice" placeholder="Price">
+<button onclick="addMenu()">Add Item</button>
+
+<h3>Logo</h3>
+<input type="file" accept="image/*" onchange="loadLogo(event)">
+
+<h3>Security</h3>
+<input id="newPass" placeholder="New Password">
+<button onclick="changePass()">Change Password</button>
+
+<h3>Danger Zone</h3>
+<button class="danger" onclick="deleteAllBills()">Delete ALL Bills</button>
+</section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
