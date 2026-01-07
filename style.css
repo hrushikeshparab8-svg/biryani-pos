@@ -1,0 +1,76 @@
+body{
+ margin:0;
+ font-family:-apple-system,BlinkMacSystemFont;
+ background:linear-gradient(135deg,#ff512f,#dd2476);
+ color:white;
+ display:flex;
+ height:100vh;
+}
+
+.glass{
+ background:rgba(255,255,255,0.18);
+ backdrop-filter:blur(18px);
+ border-radius:18px;
+ padding:15px;
+}
+
+.sidebar{
+ width:220px;
+ display:flex;
+ flex-direction:column;
+ gap:10px;
+}
+
+.sidebar button{
+ border:none;
+ padding:12px;
+ border-radius:12px;
+ background:rgba(255,255,255,0.25);
+ color:white;
+ font-size:16px;
+}
+
+.content{
+ flex:1;
+ padding:15px;
+ overflow:auto;
+}
+
+.page.hidden{display:none;}
+
+.orderType button{
+ margin:5px;
+ padding:10px;
+ border-radius:14px;
+ border:none;
+}
+
+.primary{
+ padding:14px;
+ width:100%;
+ font-size:18px;
+ border:none;
+ border-radius:16px;
+ background:#00e676;
+ color:black;
+}
+
+.billItem{
+ margin:10px 0;
+ padding:12px;
+ border-radius:14px;
+ background:rgba(255,255,255,0.25);
+}
+
+input{
+ width:100%;
+ margin:5px 0;
+ padding:10px;
+ border-radius:12px;
+ border:none;
+}
+
+.danger{
+ background:#ff5252;
+ color:white;
+}
