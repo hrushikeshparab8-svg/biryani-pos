@@ -1,0 +1,8 @@
+{
+ "name":"The House of Biryani’s POS",
+ "short_name":"Biryani POS",
+ "start_url":"./",
+ "display":"standalone",
+ "background_color":"#ffffff",
+ "theme_color":"#ff512f"
+}
