@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>The House of Biryani’s POS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="print.css">
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- Side Menu -->
+<div id="sidebar" class="sidebar">
+  <h3>The House of Biryani’s</h3>
+  <button onclick="nav('home')">🏠 Home</button>
+  <button onclick="nav('sales')">📊 Sales</button>
+  <button onclick="nav('bills')">🧾 Bills</button>
+  <button onclick="openSettings()">⚙️ Settings</button>
+</div>
+
+<!-- Header -->
+<header>
+  <button onclick="toggleMenu()">☰</button>
+  <span id="title">Home</span>
+</header>
+
+<!-- Pages -->
+<main>
+
+<section id="home" class="page">
+  <h2>Order Type</h2>
+  <div class="types">
+    <button onclick="setType('Dine In')">Dine In</button>
+    <button onclick="setType('Swiggy')">Swiggy</button>
+    <button onclick="setType('Zomato')">Zomato</button>
+    <button onclick="setType('Take Away')">Take Away</button>
+  </div>
+
+  <h2>Menu</h2>
+  <div id="menuList" class="menu"></div>
+
+  <div class="totalBox">
+    Total ₹ <span id="total">0</span>
+    <button onclick="saveBill()">Create Bill</button>
+  </div>
+</section>
+
+<section id="bills" class="page hidden"></section>
+<section id="sales" class="page hidden"></section>
+
+</main>
+
+<script src="db.js"></script>
+<script src="analytics.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
