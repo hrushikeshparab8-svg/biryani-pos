@@ -1,5 +1,0 @@
-@media print {
- body{font-size:12px}
- button,.modes,.billing,.actions{display:none}
- header{text-align:center;font-size:16px}
-}
